@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performing Calculations with Computers I &#8212; PHYS11006 - Computing Skills Workshop</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Wk1_Computers_as_Calculators';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Measurements, Errors and Uncertainty" href="Wk1_Measurements_Errors_and_Uncertainty.html" />
+    <link rel="prev" title="Welcome to PHY11006 Computing Skills" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHY11006 Computing Skills
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Performing Calculations with Computers I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wk1_Measurements_Errors_and_Uncertainty.html">Measurements, Errors and Uncertainty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk2_Data_Types_Management.html">Data Types and Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wk2_Functions_and_Modules.html">Functions and Modules</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk3_Conditional_Statements_and_Loops.html">Conditional Statements and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wk3_Visualising_Data_and_Manual_Regression.html">Visualising Data and Manual Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk4_Linear_Regression_Scipy.html">Linear Regression using Scipy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk5_Solving_Coding_Problems.html">Solving Coding Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wk5_Artificial_Intelligence.html">Artificial Intelligence (AI)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk6_Computing_Skills_Assessment.html">Computing Skills Assessment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wk12_Weighted_and_NonLinear_Regression.html">Weighted and Non-Linear Regression Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 2, Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk2_Take_Your_Barometer_For_A_Walk.html">Take Your Barometer For A Walk!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 2,Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk5_Pandas.html">Pandas DataFrames</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 2, Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk6_PythonAssessment.html">Python Skills Assessment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 2, Week 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk7_An_Introduction_to_LabView.html">An Introduction to LabView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk7_Interfacing_LabView_myDAQ.html">Interfacing with LabView and a myDAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 2, Week 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk8_AC_Theory.html">AC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="S2_Wk8_AC_Circuits_Simulations.html">Simulating AC Circuits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Useful_Functions.html">Useful Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_ErrorProp.html">Propagation of Uncertainties</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FWk1_Computers_as_Calculators.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Wk1_Computers_as_Calculators.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Performing Calculations with Computers I</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-scientists-use-computers">Why Should Scientists Use Computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-just-use-pen-and-paper">Why Not Just Use Pen and Paper?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-calculators">Computers as Calculators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-sheets">Google Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Google Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">2. Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="performing-calculations-with-computers-i">
+<h1>Performing Calculations with Computers I<a class="headerlink" href="#performing-calculations-with-computers-i" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<div class="section" id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>By the end of this session, you should be able to:</p>
+<ul class="simple">
+<li><p>Understand why computers are valuable tools for performing calculations and analysis.</p></li>
+<li><p>Use a variety of computational tools to perform numerical and symbolic calculations.</p></li>
+<li><p>Navigate and utilize Jupyter notebooks using <strong>Google Colab</strong>.</p></li>
+<li><p>Apply computational thinking and basic programming skills to solve physics-related problems.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-should-scientists-use-computers">
+<h2>Why Should Scientists Use Computers?<a class="headerlink" href="#why-should-scientists-use-computers" title="Permalink to this heading">#</a></h2>
+<p>As scientists, we often need to analyze data, test predictions, simulate systems, or even just crunch numbers. Sure, you could try to do all this by hand — but it wouldn’t take long before you ran into problems.</p>
+<p>Let’s take a closer look at what computers bring to the table:</p>
+<blockquote>
+<div><p><strong>Data Analysis:</strong> Imagine you’re working with a dataset from an experiment — say, thousands of measurements from a particle detector. Analysing all of that by hand would be incredibly slow and error-prone. With a computer, you can quickly process the data, apply statistical tools, and even spot trends visually using plots.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Visualization:</strong> Physics often involves relationships between quantities that are easier to understand when visualized — like plotting velocity vs. time. Computers can generate accurate and beautiful graphs in seconds, helping you interpret results far more effectively.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Control Systems:</strong> Computers can be used to automate and control lab equipment — for example, setting up a feedback loop to stabilize the temperature of a sample. This kind of precision and responsiveness is almost impossible to do manually.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Simulation:</strong> Want to understand how galaxies form, or how particles behave in a magnetic field? You can write a computer program to simulate these systems and run them under different conditions. This allows you to explore “what if” questions that would be impossible (or unsafe!) to test in a real lab.</p>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-not-just-use-pen-and-paper">
+<h2>Why Not Just Use Pen and Paper?<a class="headerlink" href="#why-not-just-use-pen-and-paper" title="Permalink to this heading">#</a></h2>
+<p>It’s totally possible to do most of these tasks the old-fashioned way. But that approach has some major downsides:</p>
+<blockquote>
+<div><p><strong>Humans are prone to mistakes</strong><br />
+It’s easy to misread a digit (say, writing <code class="docutils literal notranslate"><span class="pre">3.4456123</span></code> as <code class="docutils literal notranslate"><span class="pre">3.4456213</span></code>), forget a negative sign, or drop a bracket in a long equation. These little errors can completely throw off your results.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Humans are slow</strong><br />
+Say I gave you a table of 1,000 numbers and asked you to square each one, take the square root of the result, and then average the values. You could do it — but it would take hours. Now imagine I told you partway through that the inputs were slightly wrong and you needed to start over… It is clear why we might want to use a computer for this task.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Repetitive tasks are boring</strong><br />
+No one wants to solve the same equation a million times with different inputs. Computers, on the other hand, are perfectly happy to do just that — and they’ll do it in milliseconds.</p>
+</div></blockquote>
+<p>To summarise, computers are:</p>
+<ul class="simple">
+<li><p><strong>Fast</strong> – They can perform calculations millions of times faster than we can.</p></li>
+<li><p><strong>Accurate</strong> – Once programmed correctly, they won’t make careless mistakes.</p></li>
+<li><p><strong>Repeatable</strong> – They can run the same task over and over without complaint.</p></li>
+<li><p><strong>Flexible</strong> – Need to change one input or try a different model? No problem — just tweak a line of code.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="computers-as-calculators">
+<h2>Computers as Calculators<a class="headerlink" href="#computers-as-calculators" title="Permalink to this heading">#</a></h2>
+<p>As an exercise to get to grips with a few of the different computing tools we can use to perform calculations, we will complete a series of exercises using two different tools: <strong>Google Sheets</strong> and a <strong>Jupyter Notebook</strong> on Google Collab.</p>
+<p>The exercises to complete this session are provided following the overview of the tools you  will be using.</p>
+<hr class="docutils" />
+<div class="section" id="google-sheets">
+<h3>Google Sheets<a class="headerlink" href="#google-sheets" title="Permalink to this heading">#</a></h3>
+<p>Google sheets is an online spreadsheet program (like Microsoft Excel) that can be used to efficiently perform calculations and visualise trends in the form of graphs. Numbers can be directly entered into cells and calculations can be performed using these numbers by writing a formula that references the cell. When performing a calculation in a cell, <strong>you must begin the formula with an equals sign</strong>. An advantage of using a spreadsheet is that you only need to type a formula once to perform many calculations.</p>
+<p>An example of the way we can perform calculations is provided in the GIF below:</p>
+<p><img alt="image, alt = &quot;A GIF demonstrating how to use Google sheets to perform repeat calculations." src="_images/GoogleSlides.gif" /></p>
+<p>Built into Google Sheets are many pre-made functions that can perform calculations for you, for example:</p>
+<blockquote>
+<div><p><strong>=average(A1:A4)</strong> can be used to determine the average value of the numbers stored in cells A1 to A4) .</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>=sum(A1:A4)</strong> can be used to determine the total value of the numbers in cells A1 to A4).</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>=log(A1,10)</strong> will calculate the log (base 10) of the number in cell A1.</p>
+</div></blockquote>
+<p>You can search for any of the functions you may need <a class="reference external" href="https://support.google.com/docs/table/25273?hl=en-GB">here</a>. The documentation tells you what a function does and even provides examples of how to use them if you are unsure.</p>
+<p>In many instances we may want to use the value stored in one cell in multiple calculations. For example, in the gif below I want to determine the binding energy of various nuclei from their mass deficits. The mass deficit is given in units of AMU and I want to get the binding energy in MeV. I could easily do this conversion by remembering that <span class="math notranslate nohighlight">\(1\,\text{amu} = 931.5\, \text{MeV}\,\text{c}^2\)</span>, but to show multiple examples of using fixed variables, I will convert from <em>amu</em> to <em>kg</em> to <em>J</em> to <em>MeV</em>. I do this by fixing the cells in my formulas using dollar signs:</p>
+<p><img alt="image, alt = &quot;A GIF demonstrating how to use dollar signs to fix cells when performing repeat calculations." src="_images/DollarSigns.gif" /></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
+<p>One of the skills that you will learn over the course of this block is how to use Python. Python is a high-level programming language that can be used in web development, task automation, data analysis and visualisation, and many more activities. It is a widely used language in science as it is freely available, open source and very flexible in the way that it can be used.</p>
+<p>If you would like to install Python onto your own computer, the easiest way to do this is by downloading Anaconda. Installation is simple and once complete you will have access to Python from your computer’s terminal or by opening <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>. Within Anaconda you can use many other Python based programs such as SpyderIDE or Jupyter Notebooks etc.</p>
+<p>When using python we can start to type in basic python commands or return the answers to basic calculations. The mathematical operations are similar those used in Google Sheets (add is “+”, and divide is “/” etc.), however there are some differences, for example, to raise something to the power in Python we use “**” rather than “^”.* Take a look at the examples below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">*</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>In many cases we want to save information to be used later. This can be achieved using a variable (more on this next week). You may assign a variable a value in a python script by typing the name of the variable and setting it equal to its value (e.g. A = 6). This can now be used in calculations. We can reassign the value of the variable at any time by simply setting it equal to another value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="jupyter-notebooks">
+<h3>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h3>
+<p>There are lots of ways we can get a computer to read and execute the Python code we write, but a great tool to use is the Jupyter Notebook. One of the key advantages of using a Jupyter notebook is that we can execute blocks of code and see the output before running another block. Additionally, the notebook can be interlaced with text and equations in a clear way that does not interfere with our code. This makes it easier to understand what our code is doing or how it is related to the topic we are covering. These notebooks will form the basis of how Python is taught in these workshops.</p>
+<p>Although we can save Jupyter notebooks locally on our computer (included in Anaconda), we can also use them in the cloud using Google Colaboratory (or Colab). Colab is an online tool that will be used to share the notebooks used in these sessions and where you are free to do your work.</p>
+<p>Should you ever want to create a new notebook, you can do so from your Google Drive. Simply press the “+New” button and then find Colaboratory. Once you have created your notebook, you can enter code into a cell and execute it by pressing “run” in the toolbar. The output will be shown directly below the cell.</p>
+<p><img alt="image, alt = &quot;A GIF demonstrating how to create a Jupyter Notebook in CoCalc.&quot;" src="_images/CollabMake.gif" /></p>
+<p>Spend some time familiarising yourself with this new coding environment. Perform some calculations and run the cells and see what they output. Try to get into the habit of organising different sections of your code in different cells - tidy code is much easier to read and debug, and by splitting sections of code into different cells you will be able to quickly identify where your code may be breaking. <strong>Important note: the computer will read and execute your code line by line in order - ensure that any terms used are defined before they are called.</strong></p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important</p>
+<p>Each week Jupyter notebooks containing the session activities will be made avaliable to you via links. You must download a copy of the notebook to your Google Drive. You will not be able to work in the linked template.</p>
+<p>To organise your work:</p>
+<ol class="arabic simple">
+<li><p>create a folder called “<strong>Skills Workshops: Computing</strong>”</p></li>
+<li><p>Each week, create a sub-folder called “<strong>Semester 1, Week X</strong>”.</p></li>
+<li><p>Keep your work organised in these folders.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="activities">
+<h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
+<p>The following activities have been designed for you to get to grips with the two tools discussed above. The problems provided are related to the content you have covered in A-level mechanics and possibly recapped in the mechanics lecture this week.</p>
+<div class="note admonition">
+<p class="admonition-title">Downloads</p>
+<p>To get started on these activities, open the <a class="reference external" href="https://docs.google.com/spreadsheets/d/199Y0vmsT0HTaixNJBrRp-vVfajNqFuuPJE_knDMYyEo/edit?usp=sharing">Google Sheet</a> and <a class="reference external" href="https://colab.research.google.com/drive/12fLSqvbo-Z34D9KNqzBbfD7030n4225o?usp=sharing">Colaboratory</a> via the links and save a copy to your drive.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h3>1. Google Sheets<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>A projectile is launched with an initial velocity of <span class="math notranslate nohighlight">\(17.05 \,ms^{-1}\)</span> at an angle of <span class="math notranslate nohighlight">\(63\)</span> degrees relative to the horizontal plane. The projectile follows a parabolic path according to:</p>
+<div class="math notranslate nohighlight">
+\[
+y = x \tan{\theta}-\frac{gx^2}{2v_0^2 \cos^2{\theta}} 
+\]</div>
+<ol class="arabic simple">
+<li><p>Determine the maximum vertical height reached by the projectile using SUVAT.</p></li>
+<li><p>Determine the maximum horizontal distance the projectile travels.</p></li>
+<li><p>Use the projectile equation to determine the height of the projectile as a function of the horizontal distance travelled by the projectile up to the maximum horizontal distance travelled (to the nearest m). Start at a horizontal displacement of <span class="math notranslate nohighlight">\(0\,m\)</span> and increase in increments of <span class="math notranslate nohighlight">\(1\,m\)</span>.</p></li>
+<li><p>Plot the height of the projectile as a function of the horizontal distance travelled.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Hint</p>
+<p>Google Sheets requires angles to be in radians. For part 4, the easiest way to do this in Google Sheets is to highlight your x and y data and select the “insert chart” icon from the toolbar.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="jupyter-notebook">
+<h3>2. Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h3>
+<p>This time a projectile is launched with an initial velocity of <span class="math notranslate nohighlight">\(120 \, ms^{-1}\)</span> at an angle of <span class="math notranslate nohighlight">\(47\)</span> degrees relative to the horizontal plane of a platform that is 11<span class="math notranslate nohighlight">\(\,\)</span>m above the ground. Once again:</p>
+<ol class="arabic simple">
+<li><p>Determine the maximum vertical height reached by the projectile (relative to the ground).</p></li>
+<li><p>Calculate the maximum horizontal distance that the projectile travels.</p></li>
+<li><p>Use the projectile equation to determine the height of the projectile as a function of the horizontal distance travelled by the projectile (use 5 horizontal distances <span class="math notranslate nohighlight">\(x = 200\,m, 500\,m, 800\,m, 1100\,m\)</span> and <span class="math notranslate nohighlight">\(1400\,m\)</span>)</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Hint</p>
+<p>Use np.tan() and np.cos() in the Jupyter notebook where necessary and again use radians - more on this later!</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to PHY11006 Computing Skills</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Wk1_Measurements_Errors_and_Uncertainty.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Measurements, Errors and Uncertainty</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-scientists-use-computers">Why Should Scientists Use Computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-just-use-pen-and-paper">Why Not Just Use Pen and Paper?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-calculators">Computers as Calculators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-sheets">Google Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Google Sheets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">2. Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Ross Mathieson
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
